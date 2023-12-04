@@ -7,7 +7,7 @@
     p = &y;
     x = *p;
     x = 4;
-    (*p)++;
+    (*p)++; \\ sem os parênteses não teria nenhuma mudança 
     --x;
     (*p) += x;
 ```
