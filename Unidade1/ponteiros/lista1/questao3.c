@@ -1,7 +1,5 @@
-### Questão 03
+//3) Qual será a saída exibida pelo programa a seguir:
 
-+ Código da questão:
-```
 #include <stdio.h>
 
 int main(void) {
@@ -12,16 +10,12 @@ int main(void) {
     p1 = p2; // igualha o ponteiro p1 com p2, assim, pode-se acessar a variável "a" por ambos
     *p2 = 10; // o conteúdo de p2 que é igual a p1 vai ser 10, assim, a = 10
     b = 20; // b vai ser 20
-    int **pp; // cria um ponteiro dublo, assim, um ponteiro para outro ponteiro
+    int **pp; // cria um ponteiro duplo, assim, um ponteiro para outro ponteiro
     pp = &p1; // esse ponteiro vai guardar o endereço do ponteiro p1
-    *p3 = **pp; // o conteúdo de p3 vai ser igual ao conteúdo de pp que guarda o conteúdo do conteúdo de p1, ou seja, a
+    *p3 = **pp; // o conteúdo de p3 vai ser igual ao conteúdo de pp que guarda o conteúdo do conteúdo de p1, ou seja, c = 10
     int *p4 = &d; // cria um ponteiro e atribui ao endereço de d
     *p4 = b + (*p1)++; // o conteúdo de p4 vai ser igual a 20 + 10 (o ++ teria que estar antes para ser 20 + 11)
     printf("%d\t%d\t%d\t%d\n", a, b, c, d); // vai ser printado os conteúdos das variáveis a = 11, b = 20, c = 10, d = 30
     return 0;
 }
-
-```
-
-
-A saída do código será a = 11, b = 20, c = 10, d = 30.
+//A saída do código será a = 11, b = 20, c = 10, d = 30.
