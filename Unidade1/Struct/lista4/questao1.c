@@ -20,7 +20,8 @@ void preenche(Ingresso * i){
 }
 
 void imprime(Ingresso * i){
-    printf("Valor do ingressso: %.2f", i->preco);
+    printf("\n---------------------------------------");
+    printf("\nValor do ingressso: R$%.2f", i->preco);
 
     printf("\nLocal da sessao: %s", i->local);
 
@@ -32,30 +33,45 @@ void altera_preco(Ingresso * i, float valor){
     printf("Novo valor: R$%.2f", i->preco);
 }
 
+void altera_preco_vet(int n, Ingresso * vet){
+    int c;
+    int n_ingresso;
+    float novo_valor;
+    printf("\n-------------------------------------------------------------------------");
+    printf("\nDigite o numero do ingresso que deseja mudar que vai de 0 ate %d: ", n-1);
+    scanf("%d", &n_ingresso);
+    for(c=0; c < n; c++){
+        if (c == n_ingresso){
+            printf("\nInforme o novo valor que deseja cadastrar: ");
+            scanf("%f", &novo_valor);
+            vet[c].preco = novo_valor;
+
+        }
+    }
+}
+
 
 
 void imprime_menor_maior_preco(int n, Ingresso * vet ){
     int i;
-    int maior_preco, menor_preco;
-    for (i=0; i<n; i++){
-        if (i==0){
+    float maior_preco = vet[0].preco;
+    float menor_preco = vet[0].preco;
+
+    for (i = 0; i < n; i++) {
+        if (vet[i].preco > maior_preco) {
             maior_preco = vet[i].preco;
+        }
+
+        if (vet[i].preco < menor_preco) {
             menor_preco = vet[i].preco;
         }
-        else{
-            if (maior_preco <= vet[i].preco){
-                maior_preco = vet[i].preco;
-            }
-            else if (menor_preco >= vet[i].preco){
-                menor_preco = vet[i].preco;
-            }
-        }
     }
+
 
     for (i=0; i<n; i++){
         if (vet[i].preco == maior_preco){
             printf("*****************************************************************************************\n");
-            printf("Pessoa com maior preco: \n");
+            printf("Ingresso com maior preco: \n");
 
             printf("O preco: %f \n", vet[i].preco);
 
@@ -68,9 +84,9 @@ void imprime_menor_maior_preco(int n, Ingresso * vet ){
     for (i=0; i<n; i++){
         if (vet[i].preco == menor_preco){
             printf("*****************************************************************************************\n");
-            printf("Pessoa com menor preco: \n");
+            printf("Ingresso com menor preco: \n");
 
-            printf("O preco: %f \n", vet[i].preco);
+            printf("O preco: %.2f \n", vet[i].preco);
 
             printf("O local: %s \n", vet[i].local);
 
@@ -101,7 +117,8 @@ int main(void){
     
     int c; 
     for(c=0; c< n; c++){
-        printf("Preencha o valor do ingressso %d: ", c);
+        printf("\n-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+        printf("\nPreencha o valor do ingressso %d: ", c);
         scanf("%f", &vet[c].preco);
 
         printf("\nInforme o local da sessao: ");
@@ -111,6 +128,10 @@ int main(void){
         scanf(" %[^\n]", vet[c].atracao);
     }
 
+    //mudando o preço do ingresso dentro do vetor 
+    altera_preco_vet(n, vet);
+
+    //imprimindo o menor e maior valor de ingresso
     imprime_menor_maior_preco(n, vet);
 
 
