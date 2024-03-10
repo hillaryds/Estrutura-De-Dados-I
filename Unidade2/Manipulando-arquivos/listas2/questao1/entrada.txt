@@ -1,0 +1,2 @@
+Nome: Hillary	ID: 2	Salario: R$78.00
+Nome: Caio	ID: 1	Salario: R$223.00

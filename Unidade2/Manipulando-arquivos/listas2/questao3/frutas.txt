@@ -1,0 +1,2 @@
+Nome: banana,valor: R$2.00
+Nome: maca,valor: R$4.00

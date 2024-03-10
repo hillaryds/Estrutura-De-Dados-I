@@ -1,0 +1,11 @@
+10
+A1	Ana	A	800.00
+A2	Beatriz	A	800.50
+A3	Bruna	A	1000.50
+B1	Carla	B	1000.50
+B2	Daniela	B	2000.50
+B3	Joana	B	3000.50
+B4	Raquel	B	4000.00
+C1	Maria	C	700.00
+C2	Marcos	C	800.00
+C3	Yaritza	C	4000.00

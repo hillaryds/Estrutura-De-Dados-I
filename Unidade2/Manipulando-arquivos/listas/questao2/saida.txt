@@ -1,0 +1,3 @@
+Maior numero: 10
+Menor numero: 1
+Media: 5.50

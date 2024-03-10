@@ -1,0 +1,2 @@
+Nome: Caio	Nota 1: 10.00	Nota 2: 10.00
+Nome: Hillary	Nota 1: 0.00	Nota 2: 7.80
