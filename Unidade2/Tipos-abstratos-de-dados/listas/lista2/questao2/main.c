@@ -13,11 +13,7 @@ int main(){
     Funcionario ** funcionario = (Funcionario**) malloc(n * sizeof(Funcionario*));
     
     for(int i = 0; i < n; i++){
-        funcionario[i] = (Funcionario*) malloc(sizeof(Funcionario*));
-    }
-
-    for(int i = 0; i < n; i++){
-        fscanf(arquivo, "%[^\t]\t%[^\t]\t%c\t%f\n", funcionario[i]->id, funcionario[i]->nome, &funcionario[i]->departamento, &funcionario[i]->salario);
+        funcionario[i] = (Funcionario*) malloc(sizeof(Funcionario));
     }
 
     captar_informacoes(arquivo, n, funcionario);
@@ -26,8 +22,8 @@ int main(){
     imprime_folha_pagamento(n, funcionario, 'A');
     imprime_folha_pagamento(n, funcionario, 'B');
     imprime_folha_pagamento(n, funcionario, 'C');
-
     
+
     
     for(int i = 0; i < n; i++){
         free(funcionario[i]);
